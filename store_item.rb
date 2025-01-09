@@ -16,6 +16,8 @@
 # puts item1, item2, item3
 
 class Store
+  attr_reader :condition
+  attr_writer :product, :price, :brand
   def initialize(product, price, brand, condition)
     @product = product
     @price = price
@@ -28,13 +30,14 @@ class Store
     puts "This store sells #@condition #@product, for $#@price, from #@brand!"
   end
 
-  def read_write
-    
-  end
 end
+
 
 item1 = Store.new("Televisions", 499, "LG", "New")
 item2 = Store.new("Washers", 899, "LG", "Used")
 item3 = Store.new("Refrigerators", 1299, "Samsung", "New")
 
-puts item1.print_store, item2.print_store, item3.print_store
+# puts item1.print_store, item2.print_store, item3.print_store
+
+item1.price = 599
+puts item1.price
